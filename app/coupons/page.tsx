@@ -1,3 +1,5 @@
+"use client"
+
 import { Base } from "../components"
 
 export default function Page() {

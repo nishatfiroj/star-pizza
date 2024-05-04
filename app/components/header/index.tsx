@@ -1,4 +1,4 @@
-import { pages } from "../../types"
+import { pages } from "../../utils/types"
 
 export function Header() {
   return (

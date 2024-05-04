@@ -1,3 +1,5 @@
+"use client"
+
 import { Base } from ".."
 import { ContentSection, HomeMain, PizzaSection, TickerSection } from "./styled"
 
