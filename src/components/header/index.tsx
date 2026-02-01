@@ -37,10 +37,12 @@ function DesktopHeader() {
 function NavBarItem({ page, children }: { page: Pages; children?: ReactNode }) {
   const currentPage = useCurrentPage()
 
+  const href = page === "home" ? "/" : `/${page}`
+
   return (
     <StyledNavBarItem
       $currentpage={(currentPage == page).toString()}
-      href={`/${page}`}
+      href={href}
     >
       {page === "home" ? children : page}
     </StyledNavBarItem>

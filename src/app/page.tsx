@@ -1,12 +1,7 @@
 "use client"
 
-import { Header } from "@/src/components/header"
+import { Base } from "../components/Base"
 
 export default function Home() {
-  return (
-    <>
-      <Header />
-      <main></main>
-    </>
-  )
+  return <Base>this is the base</Base>
 }
