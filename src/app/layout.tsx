@@ -1,10 +1,15 @@
 import type { Metadata } from "next"
-import { Kadwa } from "next/font/google"
+import { Kadwa, Bebas_Neue } from "next/font/google"
 import "./globals.css"
 
 const kadwa = Kadwa({
   weight: "400",
   variable: "--font-kadwa",
+})
+
+const bebas_Neue = Bebas_Neue({
+  weight: "400",
+  variable: "--font-bebas-neue",
 })
 
 export const metadata: Metadata = {
@@ -18,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${kadwa.variable} `}>
+    <html lang="en" className={`${kadwa.variable} ${bebas_Neue.variable}`}>
       <body>{children}</body>
     </html>
   )
