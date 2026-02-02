@@ -5,7 +5,7 @@ import Image from "next/image"
 import pizza from "@/public/pizza.svg"
 import { useBreakpoints } from "@/src/utils/hooks"
 import { RotatingContainer, Rotator, RotatingItem } from "./styled"
-import { Base, Paper } from "@/src/components"
+import { Base, Paper, Paragraph } from "@/src/components"
 import { LocationCard, locations } from "./LocationCard"
 
 export default function Home() {
@@ -38,7 +38,7 @@ export default function Home() {
 const RotatingGraphic = () => {
   return (
     <Grid container flexDirection="column" alignItems="center">
-      <Grid>Quality is our #1 priority</Grid>
+      <Paragraph>Quality is our #1 priority</Paragraph>
       <RotatingContainer>
         <Rotator>
           <RotatingItem>Fresh made dough</RotatingItem>
@@ -48,7 +48,7 @@ const RotatingGraphic = () => {
           <RotatingItem>Delivery and pick up!</RotatingItem>
         </Rotator>
       </RotatingContainer>
-      <Grid>Since 1999</Grid>
+      <Paragraph>Since 1999</Paragraph>
     </Grid>
   )
 }

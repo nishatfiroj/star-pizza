@@ -53,7 +53,3 @@ export const RotatingItem = styled.div`
   color: var(--default-text-color);
   animation: ${spin_words} 8s infinite;
 `
-
-export const SupportingText = styled(Grid)`
-  font-family: var(--font-kadwa);
-`
