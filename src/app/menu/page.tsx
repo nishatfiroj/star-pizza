@@ -42,7 +42,7 @@ export default function Page() {
     <Base>
       <Grid container flexDirection="column">
         {Object.keys(menuItems).map((menuItemKey, i) => (
-          <Grid key={i} border="1px solid red">
+          <Grid key={i} padding="8px">
             <Grid>
               <Heading>{menuItemKey}</Heading>
             </Grid>
