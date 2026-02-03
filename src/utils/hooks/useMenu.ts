@@ -1,5 +1,5 @@
 import { getMenu } from "@/api/getMenu"
-import { Category, MenuItem } from "@/src/app/menu/MenuItems"
+import { Category, MenuItem } from "@/src/components/MenuItems"
 import { useState, useEffect, useCallback } from "react"
 
 export const useMenu = () => {

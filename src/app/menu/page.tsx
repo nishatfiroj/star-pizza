@@ -1,9 +1,8 @@
 "use client"
 
-import { Base, Heading } from "@/src/components"
+import { Base, Category, Heading, MenuItem, MenuItems } from "@/src/components"
 import { useMenu } from "@/src/utils/hooks/useMenu"
 import { Grid } from "@mui/material"
-import { Category, MenuItem, MenuItems } from "./MenuItems"
 
 export default function Page() {
   const { getCategory } = useMenu()
