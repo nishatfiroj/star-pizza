@@ -41,7 +41,7 @@ function NavBarItem({ page, children }: { page: Pages; children?: ReactNode }) {
 
   return (
     <StyledNavBarItem
-      $currentpage={(currentPage == page).toString()}
+      $currentpage={(currentPage === page).toString()}
       href={href}
     >
       {page === "home" ? children : page}

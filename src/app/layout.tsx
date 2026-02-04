@@ -1,10 +1,10 @@
 import type { Metadata } from "next"
-import { Kadwa, Bebas_Neue } from "next/font/google"
+import { Arvo, Bebas_Neue } from "next/font/google"
 import "./globals.css"
 
-const kadwa = Kadwa({
-  weight: "400",
-  variable: "--font-kadwa",
+const arvo = Arvo({
+  weight: ["400", "700"],
+  variable: "--font-arvo",
 })
 
 const bebas_Neue = Bebas_Neue({
@@ -23,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${kadwa.variable} ${bebas_Neue.variable}`}>
+    <html lang="en" className={`${arvo.variable} ${bebas_Neue.variable}`}>
       <body>{children}</body>
     </html>
   )

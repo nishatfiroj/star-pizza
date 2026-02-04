@@ -7,5 +7,5 @@ export const Heading = styled(Grid)`
 `
 
 export const Paragraph = styled(Grid)`
-  font-family: var(--font-kadwa);
+  font-family: var(--font-arvo);
 `
