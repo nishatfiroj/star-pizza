@@ -7,6 +7,7 @@ import { useBreakpoints } from "@/src/utils/hooks"
 import { RotatingContainer, Rotator, RotatingItem } from "./styled"
 import { Base, Paper, Paragraph } from "@/src/components"
 import { LocationCard, locations } from "./LocationCard"
+import { BestInGalaxyCoupon, PizzaWingComboCoupon } from "../coupons/page"
 
 export default function Home() {
   const { isMobile } = useBreakpoints()
@@ -29,6 +30,11 @@ export default function Home() {
               ))}
             </Grid>
           </Paper>
+        </Grid>
+
+        <Grid>
+          <PizzaWingComboCoupon />
+          <BestInGalaxyCoupon />
         </Grid>
       </Grid>
     </Base>

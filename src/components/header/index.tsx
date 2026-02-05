@@ -15,7 +15,12 @@ export function Header() {
 function DesktopHeader() {
   return (
     <header>
-      <Grid container alignItems="center" justifyContent="space-around">
+      <Grid
+        container
+        alignItems="center"
+        justifyContent="space-between"
+        padding="0 24px"
+      >
         <Grid>
           <NavBarItem page={"home"}>
             <Image height={72} src={logo} alt={"Star Pizza"} />

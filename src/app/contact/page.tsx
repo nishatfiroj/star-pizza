@@ -4,11 +4,9 @@
 import React from "react"
 
 import { validateEmail, sendEmail } from "@/src/utils/helpers"
-import { Grid, Stack, TextField } from "@mui/material"
+import { Grid, TextField } from "@mui/material"
 import {
   FormContainer,
-  ConfirmedEmailSnackBarContainer,
-  ConfirmedEmailSnackBar,
   MessageInput,
   SubmitButton,
   ContactStatus,

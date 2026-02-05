@@ -1,6 +1,13 @@
 "use client"
 
-import { Base, Category, Heading, MenuItem, MenuItems } from "@/src/components"
+import {
+  Base,
+  Category,
+  Heading,
+  MenuItem,
+  MenuItems,
+  Paragraph,
+} from "@/src/components"
 import { useMenu } from "@/src/utils/hooks/useMenu"
 import { Grid } from "@mui/material"
 
@@ -45,6 +52,18 @@ export default function Page() {
             <Grid>
               <Heading>{menuItemKey}</Heading>
             </Grid>
+            {menuItemKey === "Pizzas" && (
+              <Paragraph style={{ paddingBottom: "12px" }}>
+                <i>
+                  Toppings include: pepperoni, sausage, ham, beef, meatballs,
+                  chicken, red onion, green pepper, mushroom, artichokes,
+                  jalapeño peppers, black olives, bacon, banana peppers,
+                  pineapple, tomatoe, garlic, fresh spinach, green olives, feta
+                  cheese, broccoli, anchovies (not included in coupon specials),
+                  eggplant, cheddar cheese
+                </i>
+              </Paragraph>
+            )}
             <Grid>
               <MenuItems
                 items={menuItems[menuItemKey as Exclude<Category, "Catering">]}
