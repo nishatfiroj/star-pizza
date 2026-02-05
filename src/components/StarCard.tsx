@@ -1,7 +1,7 @@
 import { Card, CardContent } from "@mui/material"
 import React from "react"
 
-export const Coupon = ({ children }: { children: React.ReactNode }) => {
+export const StarCard = ({ children }: { children: React.ReactNode }) => {
   return (
     <Card
       style={{

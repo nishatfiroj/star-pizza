@@ -31,7 +31,7 @@ export const LocationCard = ({
         <Image src={pin} alt="Location" />
       </Grid>
       <Grid size={9}>
-        <Paragraph>{address}</Paragraph>
+        <Paragraph fontSize={24}>{address}</Paragraph>
         <Paragraph>{phone}</Paragraph>
         <Paragraph>{services}</Paragraph>
         <Paragraph>{intersection}</Paragraph>

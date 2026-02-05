@@ -2,8 +2,30 @@ import { ReactNode } from "react"
 import { ResponsivePaperContainer, ResponsivePaperContent } from "./styled"
 import Image from "next/image"
 import background from "@/public/background.svg"
+import smallBackground from "@/public/smallbackground.png"
+import mobileBackground from "@/public/mobile-background.svg"
+import smallMobileBackground from "@/public/small-mobile-background.png"
+import { useBreakpoints } from "@/src/utils/hooks"
 
-export function Paper({ children }: { children: ReactNode }) {
+export function Paper({
+  children,
+  small = false,
+}: {
+  children: ReactNode
+  small?: boolean
+}) {
+  const { isMobile } = useBreakpoints()
+  let src = undefined
+  if (isMobile && small) {
+    src = smallMobileBackground
+  } else if (isMobile && !small) {
+    src = mobileBackground
+  } else if (!isMobile && small) {
+    src = smallBackground
+  } else {
+    src = background
+  }
+
   return (
     <div
       style={{
@@ -20,7 +42,7 @@ export function Paper({ children }: { children: ReactNode }) {
             justifyContent: "center",
           }}
         >
-          <Image src={background} alt="" />
+          <Image src={src} alt="" />
         </div>
       </ResponsivePaperContainer>
     </div>

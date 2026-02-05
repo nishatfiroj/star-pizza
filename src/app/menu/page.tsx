@@ -12,9 +12,11 @@ import { useMenu } from "@/src/utils/hooks/useMenu"
 import { Grid } from "@mui/material"
 import bouncingCircles from "@/public/bouncing-circles.svg"
 import Image from "next/image"
+import { useBreakpoints } from "@/src/utils/hooks"
 
 export default function Page() {
   const { getCategory, loading } = useMenu()
+  const { isMobile } = useBreakpoints()
 
   const appetizers = getCategory("Appetizers")
   const pizzas = getCategory("Pizzas")
@@ -44,18 +46,21 @@ export default function Page() {
     "Desserts & Drinks": dessertsDrinks,
   }
 
-  console.log(salads)
-
   return (
     <Base>
       <Grid container flexDirection="column">
         {Object.keys(menuItems).map((menuItemKey, i) => (
           <Grid key={i} padding="8px">
-            <Grid>
+            <Grid style={{ marginLeft: isMobile ? 0 : "24px" }}>
               <Heading>{menuItemKey}</Heading>
             </Grid>
             {menuItemKey === "Pizzas" && (
-              <Paragraph style={{ paddingBottom: "12px" }}>
+              <Paragraph
+                style={{
+                  paddingBottom: "12px",
+                  marginLeft: isMobile ? 0 : "24px",
+                }}
+              >
                 <i>
                   Toppings include: pepperoni, sausage, ham, beef, meatballs,
                   chicken, red onion, green pepper, mushroom, artichokes,

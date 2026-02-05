@@ -1,6 +1,6 @@
 "use client"
 
-import { Base, Coupon, Heading, Paragraph } from "@/src/components"
+import { Base, StarCard, Heading, Paragraph } from "@/src/components"
 import { useBreakpoints } from "@/src/utils/hooks"
 import { Grid } from "@mui/material"
 
@@ -35,7 +35,7 @@ export default function Page() {
 }
 
 export const AnniversaryCoupon = () => (
-  <Coupon>
+  <StarCard>
     <Grid textAlign="center">
       <Heading>27 year anniversary special</Heading>
       <Paragraph>25+ years of pizza merits some special pricing!</Paragraph>
@@ -71,11 +71,11 @@ export const AnniversaryCoupon = () => (
         <Paragraph>$29.99</Paragraph>
       </Grid>
     </Grid>
-  </Coupon>
+  </StarCard>
 )
 
 export const BestInGalaxyCoupon = () => (
-  <Coupon>
+  <StarCard>
     <Grid textAlign="center" container flexDirection="column">
       <Heading>Best in the Galaxy!</Heading>
       <Paragraph> 14&quot; large pizza with 3 toppings </Paragraph>
@@ -83,11 +83,11 @@ export const BestInGalaxyCoupon = () => (
       <Paragraph>16&quot; extra large pizza with 1 topping for only</Paragraph>
       <Heading>$14.99</Heading>
     </Grid>
-  </Coupon>
+  </StarCard>
 )
 
 export const GameDaySpecialCoupon = () => (
-  <Coupon>
+  <StarCard>
     <Grid textAlign="center" container flexDirection="column">
       <Heading>Game Day Special</Heading>
       <Paragraph> 3 large pizzas with 1 topping for only </Paragraph>
@@ -102,15 +102,15 @@ export const GameDaySpecialCoupon = () => (
         *same topping must be used for all 3 pies
       </Paragraph>
     </Grid>
-  </Coupon>
+  </StarCard>
 )
 
 export const PizzaWingComboCoupon = () => (
-  <Coupon>
+  <StarCard>
     <Grid textAlign="center" container flexDirection="column">
       <Heading>Pizza & Wing Combo</Heading>
 
-      <Grid container flexDirection="row" justifyContent="center">
+      <Grid container flexDirection="row" justifyContent="center" spacing={4}>
         <Grid size={4}>
           <Paragraph>Large pizza with 2 toppings and 15 wings</Paragraph>
           <Heading>$29.99</Heading>
@@ -122,16 +122,16 @@ export const PizzaWingComboCoupon = () => (
           <Paragraph>Medium pizza with 2 toppings and 10 wings</Paragraph>
           <Heading>$21.99</Heading>
           <br />
-          <Paragraph>Large pizza with 2 toppings and 10 wings</Paragraph>
-          <Heading>$23.99</Heading>
+          <Paragraph>2 Large pizza with 2 toppings and 20 wings</Paragraph>
+          <Heading>$44.99</Heading>
         </Grid>
       </Grid>
     </Grid>
-  </Coupon>
+  </StarCard>
 )
 
 export const FamilySpecialCoupon = () => (
-  <Coupon>
+  <StarCard>
     <Grid textAlign="center" container flexDirection="column">
       <Heading>Family Special</Heading>
       <Paragraph>
@@ -146,11 +146,11 @@ export const FamilySpecialCoupon = () => (
       </Paragraph>
       <Heading>$21.99</Heading>
     </Grid>
-  </Coupon>
+  </StarCard>
 )
 
 export const MixAndMatchCoupon = () => (
-  <Coupon>
+  <StarCard>
     <Grid textAlign="center" container flexDirection="column">
       <Heading>Mix & Match Any 2!</Heading>
       <Paragraph>medium pizza with 1 topping </Paragraph>
@@ -162,5 +162,5 @@ export const MixAndMatchCoupon = () => (
       <Paragraph>10&quot; subs (hot or cold) with fries or chips</Paragraph>
       <Heading>all for only $21.99!</Heading>
     </Grid>
-  </Coupon>
+  </StarCard>
 )

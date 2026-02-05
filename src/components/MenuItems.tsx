@@ -1,5 +1,6 @@
 import { Paragraph } from "@/src/components"
 import { Grid } from "@mui/material"
+import { useBreakpoints } from "../utils/hooks"
 
 export type MenuItem = {
   item: string
@@ -23,6 +24,8 @@ export type Category =
   | "Desserts & Drinks"
 
 export const MenuItems = ({ items }: { items: MenuItem[] }) => {
+  const { isMobile } = useBreakpoints()
+
   return (
     <Grid paddingBottom="20px">
       {items.map((item, i) => (
@@ -34,10 +37,10 @@ export const MenuItems = ({ items }: { items: MenuItem[] }) => {
             borderBottom="1px solid var(--secondary-color)"
             marginBottom="8px"
           >
-            <Grid>
+            <Grid style={{ marginLeft: isMobile ? 0 : "24px" }}>
               {item.item} {item.size}
             </Grid>
-            <Grid>
+            <Grid style={{ marginRight: isMobile ? 0 : "24px" }}>
               {item.price} {item.notes}
             </Grid>
           </Paragraph>
