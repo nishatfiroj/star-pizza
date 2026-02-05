@@ -4,13 +4,14 @@
 import React from "react"
 
 import { validateEmail, sendEmail } from "@/src/utils/helpers"
-import { Grid, TextField } from "@mui/material"
+import { Grid, Stack, TextField } from "@mui/material"
 import {
   FormContainer,
   ConfirmedEmailSnackBarContainer,
   ConfirmedEmailSnackBar,
   MessageInput,
   SubmitButton,
+  ContactStatus,
 } from "./styled"
 import { Base, Heading, Paragraph } from "@/src/components"
 
@@ -63,8 +64,6 @@ export default function Page() {
   const onEmailAttempt = (success: boolean) => {
     if (success) {
       setEmailState("success")
-      // clear all refs and reset state if email sent successfully
-      setContactForm(initialState)
     } else {
       setEmailState("failure")
     }
@@ -89,20 +88,17 @@ export default function Page() {
       <Grid padding={12} container flex={1} justifyContent="center">
         <FormContainer onSubmit={onSendEmail}>
           {showSnackbar && (
-            <ConfirmedEmailSnackBarContainer>
-              <ConfirmedEmailSnackBar>
-                {emailState === "success" &&
-                  "Successfully touched base with Jupiter!"}
-                {emailState === "failure" &&
-                  "Contact launch failure. Try again."}
-                {emailState === "formIncomplete" &&
-                  "Form invalid! Countdown's a no go."}
-              </ConfirmedEmailSnackBar>
-            </ConfirmedEmailSnackBarContainer>
+            <ContactStatus $status={emailState}>
+              {emailState === "success" && "Successfully contacted Star Pizza!"}
+              {emailState === "failure" && "Contact failed. Try again."}
+              {emailState === "formIncomplete" && "Form invalid! "}
+            </ContactStatus>
           )}
 
-          <Heading>Let&apos;s get in touch</Heading>
-          <div>
+          <Grid textAlign="center">
+            <Heading>Let&apos;s get in touch</Heading>
+          </Grid>
+          <Grid>
             <Paragraph>Name</Paragraph>
             <TextField
               fullWidth
@@ -114,8 +110,8 @@ export default function Page() {
                 })
               }
             />
-          </div>
-          <div>
+          </Grid>
+          <Grid>
             <Paragraph>Email</Paragraph>
             <TextField
               fullWidth
@@ -128,8 +124,8 @@ export default function Page() {
                 })
               }}
             />
-          </div>
-          <div>
+          </Grid>
+          <Grid>
             <Paragraph>Message</Paragraph>
             <MessageInput
               required
@@ -141,8 +137,8 @@ export default function Page() {
                 })
               }
             />
-          </div>
-          <div
+          </Grid>
+          <Grid
             style={{
               display: "flex",
               justifyContent: "center",
@@ -151,7 +147,7 @@ export default function Page() {
             }}
           >
             <SubmitButton onClick={onSendEmail}>Submit</SubmitButton>
-          </div>
+          </Grid>
         </FormContainer>
       </Grid>
     </Base>

@@ -1,46 +1,16 @@
+import { Stack } from "@mui/material"
 import styled from "styled-components"
 
-export const ConfirmedEmailSnackBarContainer = styled.div`
-  @keyframes snackbar {
-    0% {
-      opacity: 0;
-    }
-    10% {
-      opacity: 1;
-    }
-    90% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-    }
-  }
-
-  z-index: 7;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  position: absolute;
-  left: 0;
-  bottom: -19em;
-  animation-name: snackbar;
-  animation-duration: 3s;
-  animation-timing-function: linear;
-
-  @media (min-width: 1200px) {
-    bottom: 2em;
-  }
-`
-
-export const ConfirmedEmailSnackBar = styled.div`
-  z-index: 7;
-  color: var(--default-text-color);
-
-  padding: 1em 4em;
-
-  text-align: center;
-  text-transform: none;
+export const ContactStatus = styled(Stack)<{ $status: string }>`
+  font-weight: bold;
+  color: var(--default-white);
+  padding: 4px 8px;
   border-radius: 8px;
+
+  ${(props) =>
+    props.$status === "success"
+      ? `background-color: var(--secondary-color);`
+      : `background-color: var(--primary-color);`}
 `
 
 export const FormContainer = styled.form`
@@ -70,6 +40,7 @@ export const MessageInput = styled.textarea`
   font-weight: 200;
   padding: 8px;
   font-size: 1.5em;
+  border-radius: 4px;
 `
 
 export const InputContainer = styled.div`
