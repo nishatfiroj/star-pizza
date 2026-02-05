@@ -1,6 +1,7 @@
 import { Grid } from "@mui/material"
 import Image from "next/image"
 import pin from "@/public/location-pin.svg"
+import { Paragraph } from "@/src/components"
 
 type HoursRow = {
   label: string
@@ -30,12 +31,12 @@ export const LocationCard = ({
         <Image src={pin} alt="Location" />
       </Grid>
       <Grid size={9}>
-        <p>{address}</p>
-        <p>{phone}</p>
-        <p>{services}</p>
-        <p>{intersection}</p>
+        <Paragraph>{address}</Paragraph>
+        <Paragraph>{phone}</Paragraph>
+        <Paragraph>{services}</Paragraph>
+        <Paragraph>{intersection}</Paragraph>
         {deliveryAreas.length > 0 && (
-          <p>
+          <Paragraph>
             Delivering to{" "}
             {deliveryAreas.map((area, i) => (
               <b key={area}>
@@ -44,16 +45,16 @@ export const LocationCard = ({
               </b>
             ))}
             .
-          </p>
+          </Paragraph>
         )}
         <br />
-        <p>
+        <Paragraph>
           <b>HOURS</b>
-        </p>
+        </Paragraph>
         {hours.map((row, i) => (
-          <p key={`${row.label}-${i}`}>
+          <Paragraph key={`${row.label}-${i}`}>
             {row.label} {row.time}
-          </p>
+          </Paragraph>
         ))}
       </Grid>
     </Grid>
