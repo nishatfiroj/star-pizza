@@ -5,4 +5,3 @@ export type Pages =
   | "contact"
   | "coupons"
   | "delivery"
-  | "join"

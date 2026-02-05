@@ -27,7 +27,6 @@ function DesktopHeader() {
           <NavBarItem page={"coupons"} />
           <NavBarItem page={"delivery"} />
           <NavBarItem page={"contact"} />
-          <NavBarItem page={"join"} />
         </Grid>
       </Grid>
     </header>
