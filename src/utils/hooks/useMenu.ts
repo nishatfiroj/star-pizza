@@ -4,8 +4,13 @@ import { useState, useEffect, useCallback } from "react"
 
 export const useMenu = () => {
   const [menuData, setMenuData] = useState<string[][] | null | undefined>()
+  const [loading, setLoading] = useState(true)
+
   useEffect(() => {
-    getMenu().then((m) => setMenuData(m))
+    getMenu().then((m) => {
+      setLoading(false)
+      setMenuData(m)
+    })
   }, [])
 
   const getCategory = useCallback(
@@ -31,6 +36,7 @@ export const useMenu = () => {
   )
 
   return {
+    loading,
     getCategory,
   }
 }

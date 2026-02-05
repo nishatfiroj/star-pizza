@@ -10,9 +10,11 @@ import {
 } from "@/src/components"
 import { useMenu } from "@/src/utils/hooks/useMenu"
 import { Grid } from "@mui/material"
+import bouncingCircles from "@/public/bouncing-circles.svg"
+import Image from "next/image"
 
 export default function Page() {
-  const { getCategory } = useMenu()
+  const { getCategory, loading } = useMenu()
 
   const appetizers = getCategory("Appetizers")
   const pizzas = getCategory("Pizzas")
@@ -65,9 +67,15 @@ export default function Page() {
               </Paragraph>
             )}
             <Grid>
-              <MenuItems
-                items={menuItems[menuItemKey as Exclude<Category, "Catering">]}
-              />
+              {loading ? (
+                <Image height={48} src={bouncingCircles} alt="Loading" />
+              ) : (
+                <MenuItems
+                  items={
+                    menuItems[menuItemKey as Exclude<Category, "Catering">]
+                  }
+                />
+              )}
             </Grid>
           </Grid>
         ))}

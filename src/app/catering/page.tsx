@@ -3,9 +3,11 @@
 import { Base, Heading, MenuItems, Paragraph } from "@/src/components"
 import { useMenu } from "@/src/utils/hooks/useMenu"
 import { Grid } from "@mui/material"
+import Image from "next/image"
+import bouncingCircles from "@/public/bouncing-circles.svg"
 
 export default function Page() {
-  const { getCategory } = useMenu()
+  const { getCategory, loading } = useMenu()
   const catering = getCategory("Catering")
 
   return (
@@ -29,7 +31,11 @@ export default function Page() {
             great flavors that our regular customers love.
           </Paragraph>
           <Grid>
-            <MenuItems items={catering} />
+            {loading ? (
+              <Image height={48} src={bouncingCircles} alt="Loading" />
+            ) : (
+              <MenuItems items={catering} />
+            )}
           </Grid>
         </Grid>
       </Grid>
