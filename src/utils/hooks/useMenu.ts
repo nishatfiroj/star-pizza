@@ -1,4 +1,4 @@
-import { getMenu } from "@/api/getMenu"
+import { getMenu } from "@/src/api/getMenu"
 import { Category, MenuItem } from "@/src/components/MenuItems"
 import { useState, useEffect, useCallback } from "react"
 
