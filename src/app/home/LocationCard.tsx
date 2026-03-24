@@ -86,7 +86,7 @@ export const locations: LocationCardProps[] = [
     ],
   },
   {
-    address: "13753 Marietta Hwy #110",
+    address: "3753 Marietta Hwy #110",
     phone: "678-880-9167",
     services: "Delivery & Pickup",
     intersection: "The intersection of Marietta Hwy. & Coleman Rd.",
